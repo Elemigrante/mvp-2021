@@ -15,10 +15,10 @@
               .fa.fa-book
               Courses
 
-        %form.d-flex.h-100
-          = form_tag(root_path, method: :get) do
+        .form.d-flex.h-100
+          = form_tag(courses_path, method: :get) do
             .searchbar
-              = text_field_tag :name, params[:name], autocomplete: 'off', placeholder: "Search...", class: 'search_input'
+              = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search...", class: 'search_input'
               %button.search_icon{:type => "submit"}
                 %span.fa.fa-search
 
