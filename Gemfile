@@ -14,7 +14,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 gem 'simple_form', '~> 5.1'
 gem 'faker', '~> 2.17'
 gem 'devise', '~> 4.8'

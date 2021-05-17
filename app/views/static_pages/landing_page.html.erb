@@ -1,0 +1,105 @@
+<div class="card jumbotron" style="min-height: 150px;">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="display-5 text-center">
+        What do you want to learn today?
+      </div>
+      <div class="form h-100 justify-content-center mt-3">
+        <%= form_tag(courses_path, method: :get) do %>
+          <div class="searchbar">
+            <%= text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search...", class: 'search_input' %>
+            <button class="search_icon" type="submit">
+              <span class="fa fa-search"></span>
+            </button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-group">
+  <div class="card card-body shadow-sm border" style="min-height: 150px;">
+    <h1>
+      <i class="fa fa-graduation-cap"></i>
+    </h1>
+    <%= Course.count %>
+    online courses
+    <div class="row"></div>
+    Explore a variety of fresh topics
+  </div>
+
+  <div class="card card-body shadow-sm border" style="min-height: 150px;">
+    <h1>
+      <i class="fa fa-chalkboard-teacher">
+        <!--.fa.fa-brain
+        -->
+      </i>
+    </h1>
+    <%= Course.distinct.count(:user_id) %>
+    expert instructors
+    <div class="row"></div>
+    Find the right instructor for you
+  </div>
+
+  <div class="card card-body shadow-sm border" style="min-height: 150px;">
+    <h1>
+      <i class="fa fa-user-graduate"></i>
+    </h1>
+    <%= User.count %>
+    active learners
+    <div class="row"></div>
+    Join the knowledge sharing community
+  </div>
+
+  <div class="card card-body shadow-sm border" style="min-height: 150px;">
+    <h1>
+      <i class="fa fa-infinity"></i>
+    </h1>
+    Lifetime access
+    <div class="row"></div>
+    Learn on your schedule
+  </div>
+</div>
+
+
+<hr>
+<h2>
+  Popular courses
+</h2>
+<div class="wrapper">
+  <div class="container">
+    <div class="row m-5">
+      <% @courses.each do |course| %>
+        <%= render 'courses/course', course: course %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<hr>
+<h2>
+  Top rated courses
+</h2>
+<div class="wrapper">
+  <div class="container">
+    <div class="row m-5">
+      <% @courses.each do |course| %>
+        <%= render 'courses/course', course: course %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<hr>
+<h2>
+  Latest courses
+</h2>
+<div class="wrapper">
+  <div class="container">
+    <div class="row m-5">
+      <% @latest_courses.each do |course| %>
+        <%= render 'courses/course', course: course %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<hr/>

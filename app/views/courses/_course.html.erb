@@ -1,0 +1,46 @@
+<div class="col-md-4 mb-3">
+  <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+    <img alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?" class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street"/>
+    <div class="card-img-overlay d-flex flex-column">
+      <div class="card-body">
+        <h5 class="card-meta">
+          <div class="fa fa-book"></div>
+          <%= link_to course.title, course_path(course), style: 'color:white; text-decoration:none;' %>
+        </h5>
+        <hr/>
+        <small class="card-title">
+          <span class="text-white">
+            <%= course.description %>
+          </span>
+        </small>
+      </div>
+      <div class="card-footer">
+<!--        <div class="media">-->
+<!--          <img alt="Generic placeholder image" class="mr-3 rounded-circle" src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png" style="max-width:50px"/>-->
+<!--        </div>-->
+        <div class="media-body">
+          <small>
+            <div class="far fa-clock mb-2"></div>
+            <%= course.created_at.strftime('%d-%b-%Y') %>
+          </small>
+          <h6 class="my-0 text-white d-block">
+            <div class="fa fa-chalkboard-teacher"></div>
+            <%= course.user %>
+          </h6>
+        </div>
+        <hr/>
+        <div class="d-flex justify-content-around">
+          <%= button_to course, class: 'btn btn-success btn-circle btn-circle-sm m-1', method: :get do %>
+            <i class="fa fa-eye"></i>
+          <% end %>
+          <%= button_to edit_course_path(course), class: 'btn btn-primary btn-circle btn-circle-sm m-1', method: :get do %>
+            <i class="fa fa-pen"></i>
+          <% end %>
+          <%= button_to course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-circle btn-circle-sm m-1' do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
