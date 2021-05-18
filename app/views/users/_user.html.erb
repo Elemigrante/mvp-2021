@@ -1,0 +1,36 @@
+<div class="col-md-3">
+  <div class="card text-center mb-3" style="width: 18rem; min-height: 24rem">
+    <div class="card-header bg-info" style="text-align: center;">
+      <i class="fa fa-user"></i>
+      <%= user.email %>
+    </div>
+    <div class="card-footer">
+      <div class="card-text">
+        Signed up <%= time_ago_in_words(user.created_at) %> ago
+        <p>
+          <%= 'sign_in_count'.humanize %>:
+          <%= user.sign_in_count %>
+        </p>
+        <p>
+          <%= 'current_sign_in_at'.humanize %>: <br>
+          <%= user.current_sign_in_at %>
+        </p>
+        <p>
+          <%= 'last_sign_in_at'.humanize %>: <br>
+          <%= user.last_sign_in_at %>
+        </p>
+        <p>
+          <%= 'current_sign_in_ip'.humanize %>: <br>
+          <%= user.current_sign_in_ip %>
+        </p>
+        <p>
+          <%= 'last_sign_in_ip'.humanize %>: <br>
+          <%= user.last_sign_in_ip %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
