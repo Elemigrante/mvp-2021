@@ -7,15 +7,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-2">
-        <%= search_form_for @q do |f| %>
+        <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f| %>
           <%= f.label :title %>
           <%= f.search_field :title_cont, placeholder: 'title', class: 'form-control form-control-sm' %>
           <%= f.label :description %>
           <%= f.search_field :short_description_cont, placeholder: 'short_descr', class: 'form-control form-control-sm' %>
-          <%#= f.select :language_cont, ["English", "Russian", "Polish"], include_blank: true  %>
           <%= f.label :language %>
           <%= f.select :language_cont, Course.languages, include_blank: true %>
-          <%#= f.search_field :level_cont, placeholder: 'level', class: 'form-control form-control-sm' %>
           <%= f.label :level %>
           <%= f.select :level_cont, Course.levels, include_blank: true %>
           <%= f.label :price %>
