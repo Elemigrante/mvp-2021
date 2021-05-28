@@ -12,4 +12,16 @@ class Course < ApplicationRecord
   def to_s
     title
   end
+
+  LANGUAGES = [:"English", :"Russian", :"Polish"]
+
+  def self.languages
+    LANGUAGES.map { |lang| [lang, lang] }
+  end
+
+  LEVELS = [:"Beginner", :"Intermediate", :"Advanced"]
+
+  def self.levels
+    LEVELS.map { |lvl| [lvl, lvl] }
+  end
 end
