@@ -31,6 +31,12 @@
               Users
             <% end %>
           </li>
+          <li class="<%= 'active font-weight-bold' if current_page?(activity_path) %> nav-item">
+            <%= link_to activity_path, class: 'nav-link' do %>
+              <div class="fas fa-bell"></div>
+              Activity
+            <% end %>
+          </li>
         </ul>
         <div class="form d-flex h-100">
           <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|%>

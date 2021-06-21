@@ -20,9 +20,11 @@ gem 'faker', '~> 2.17'
 gem 'devise', '~> 4.8'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 gem 'ransack', '~> 2.4', '>= 2.4.2'
+gem 'public_activity', '~> 1.6', '>= 1.6.4'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
 end
 
 group :development do
