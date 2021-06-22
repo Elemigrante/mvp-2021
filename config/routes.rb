@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :courses
-  resources :users, only: %i[index]
+  resources :users, only: %i[index edit show update]
 
   root 'static_pages#landing_page'
 
