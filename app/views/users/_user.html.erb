@@ -36,7 +36,9 @@
             <%= role.name %>
           </div>
         <% end %>
-        <%= link_to 'Edit roles', edit_user_path(user), class: 'btn badge bg-warning' %>
+        <% if policy(user).edit? %>
+          <%= link_to 'Edit roles', edit_user_path(user), class: 'btn badge bg-warning' %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -48,14 +48,13 @@
         </div>
         <hr/>
         <div class="d-flex justify-content-around">
-          <%= button_to course, class: 'btn btn-success btn-circle btn-circle-sm m-1', method: :get do %>
-            <i class="fa fa-eye"></i>
-          <% end %>
-          <%= button_to edit_course_path(course), class: 'btn btn-primary btn-circle btn-circle-sm m-1', method: :get do %>
-            <i class="fa fa-pen"></i>
-          <% end %>
-          <%= button_to course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-circle btn-circle-sm m-1' do %>
-            <i class="fa fa-trash"></i>
+          <% if policy(course).edit? %>
+            <%= button_to edit_course_path(course), class: 'btn btn-primary btn-circle btn-circle-sm m-1', method: :get do %>
+              <i class="fa fa-pen"></i>
+            <% end %>
+            <%= button_to course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-circle btn-circle-sm m-1' do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
           <% end %>
         </div>
       </div>
