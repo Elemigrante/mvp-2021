@@ -21,6 +21,8 @@ gem 'devise', '~> 4.8'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 gem 'ransack', '~> 2.4', '>= 2.4.2'
 gem 'public_activity', '~> 1.6', '>= 1.6.4'
+gem 'rolify', '~> 6.0'
+gem 'pundit', '~> 2.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

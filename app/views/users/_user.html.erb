@@ -29,6 +29,15 @@
         </p>
       </div>
     </div>
+    <div class="card-footer">
+      <div class="card-text">
+        <% user.roles.each do |role| %>
+          <div class="badge bg-info">
+            <%= role.name %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
