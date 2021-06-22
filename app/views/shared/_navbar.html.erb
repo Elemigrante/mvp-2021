@@ -34,7 +34,7 @@
         </ul>
 
         <div class="form d-flex h-100">
-          <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|%>
+          <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f| %>
             <div class="searchbar">
               <%= f.search_field :title_cont, autocomplete: 'off', placeholder: "Search...", class: 'search_input' %>
               <button class="search_icon" type="submit">
