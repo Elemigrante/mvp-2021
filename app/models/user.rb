@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
   rolify
 
+  extend FriendlyId
+  friendly_id :email, use: :slugged
+
   has_many :courses
 
   validate :must_have_a_role, on: :update

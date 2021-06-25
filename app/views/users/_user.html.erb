@@ -2,7 +2,7 @@
   <div class="card text-center mb-3" style="width: 18rem; min-height: 24rem">
     <div class="card-header bg-info" style="text-align: center;">
       <i class="fa fa-user"></i>
-      <%= user.email %>
+      <%= link_to user.email, user_path(user) %>
     </div>
     <div class="card-footer">
       <div class="card-text">
